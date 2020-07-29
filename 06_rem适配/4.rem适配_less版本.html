@@ -3,10 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/index.css">
 	<title>rem适配less版</title>
+	<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-	
+	<div id="demo">
+	</div>
+	<script type="text/javascript" >
+		function adapter(){
+			//获取当前设备的设备独立像素值
+			const w = document.documentElement.clientWidth
+			//计算跟字体大小
+			const rootFontSize = w / 10
+			//设置根字体大小
+			document.documentElement.style.fontSize = rootFontSize + 'px'
+		}
+		adapter()
+		window.onresize = adapter
+
+	</script>
 </body>
 </html>
