@@ -3,8 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>pc缩放</title>
+	<style>
+		img{
+			width: 160px;
+			height: 120px;
+		}
+	</style>
 </head>
 <body>
-
+	<div id="demo">
+		<img src="../imgs/1.jpg" alt="">
+		<img src="../imgs/2.jpg" alt="">
+		<img src="../imgs/3.jpg" alt="">
+		<img src="../imgs/4.jpg" alt="">
+	</div>
+<script type="text/javascript" >
+	console.log(document.documentElement.clientWidth);
+	window.onresize = ()=>{
+		console.log(document.documentElement.clientWidth);
+	}
+</script>
 </body>
 </html>
