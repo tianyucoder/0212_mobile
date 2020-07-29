@@ -3,8 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>viewport说明</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width:200;
+			height: 200px;
+			background-color: orange;
+		}
+		p{
+			font-size:40px;
+		}
+	</style>
+	<!-- <meta name="viewport" content="width=device-width"> -->
+	<!-- <meta name="viewport" content="width=2000"> -->
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+	<!-- <meta name="viewport" content="maximum-scale=2.0"> -->
+	<!-- <meta name="viewport" content="minimum-scale=0.5"> -->
+	<!-- <meta name="viewport" content="user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 </head>
 <body>
-
+	<div id="demo"></div>
+	<p id="text1"></p>
+	<p id="text2"></p>
+<script type="text/javascript" >
+	console.log(document.documentElement.clientWidth);
+	const text1 = document.getElementById('text1')
+	const text2 = document.getElementById('text2')
+	setInterval(()=>{
+		text1.innerHTML = '布局视口为：'+ document.documentElement.clientWidth
+		text2.innerHTML = '视觉视口为：'+ window.innerWidth
+	},500)
+</script>
 </body>
 </html>
