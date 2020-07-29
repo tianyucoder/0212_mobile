@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
 	<title>移动端_理想视口标准</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 375px;
+			height: 100px;
+			margin: 0 auto;
+			background-color: red;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		console.log('布局视口宽度为：',document.documentElement.clientWidth);
+		console.log('视觉视口宽度为：',window.innerWidth);
+	</script>
 </body>
 </html>
