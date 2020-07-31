@@ -4,8 +4,41 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>1px物理像素边框</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 3.45rem;
+			height: 1.5rem;
+			background-color: skyblue;
+			margin:  0 auto;
+			margin-top: 0.15rem;
+			border: 1px solid black;
+		}
+	</style>
 </head>
 <body>
 	<div id="demo"></div>
+	<script type="text/javascript" >
+		function adapter(){
+			document.documentElement.style.fontSize = ((document.documentElement.clientWidth * 100) / 375) + 'px'
+		}
+		adapter()
+		window.onresize = adapter
+		console.log(document.documentElement.style.fontSize);
+
+		//获取到meta标签
+		const meta = document.querySelector('meta[name=viewport]')
+		//计算一下要initial-scale等于几
+		const scale = 1 / window.devicePixelRatio
+		//更改meta标签
+		meta.setAttribute('content','width=device-width,initial-scale='+scale)
+		//获取原来跟根字体大小
+		const rootFontSize =  parseInt(document.documentElement.style.fontSize)
+		//更改根字体大小
+		document.documentElement.style.fontSize = rootFontSize * window.devicePixelRatio + 'px'
+	</script>
 </body>
 </html>

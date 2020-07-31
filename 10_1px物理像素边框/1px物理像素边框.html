@@ -4,8 +4,64 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>1px物理像素边框</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 3.45rem;
+			height: 1.5rem;
+			margin: 0 auto;
+			margin-top: 0.15rem;
+			background-color: skyblue;
+			border: 1px solid black;
+		}
+		#demo2{
+			position: relative;
+			width: 3.45rem;
+			height: 1.5rem;
+			margin: 0 auto;
+			margin-top: 0.15rem;
+			background-color: pink;
+		}
+		#demo2::after{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			content:'';
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: black;
+		}
+		@media screen and (-webkit-min-device-pixel-ratio:2){
+			#demo{
+				border: 0.5px solid black;
+			}
+			#demo2::after{
+				transform: scaleY(0.5);
+			}
+		}
+		@media screen and (-webkit-min-device-pixel-ratio:3){
+			#demo{
+				border: 0.333px solid black;
+			}
+			#demo2::after{
+				transform: scaleY(0.333);
+			}
+		}
+	</style>
 </head>
 <body>
 	<div id="demo"></div>
+	<div id="demo2"></div>
+	<script type="text/javascript" >
+		function adapter(){
+			document.documentElement.style.fontSize = ((document.documentElement.clientWidth * 100) / 375) + 'px'
+		}
+		adapter()
+		window.onresize = adapter
+	</script>
 </body>
 </html>
