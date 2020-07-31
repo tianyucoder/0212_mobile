@@ -4,8 +4,47 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>移动端事件</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 100%;
+			height: 300px;
+			background-color: skyblue;
+		}
+		#demo2{
+			width: 100%;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
 </head>
 <body>
 	<div id="demo"></div>
+	<div id="demo2"></div>
+	<script type="text/javascript" >
+		const demo = document.getElementById('demo')
+		const demo2 = document.getElementById('demo2')
+		demo.addEventListener('touchstart',()=>{
+			console.log('你开始触摸了');
+		})
+		demo.addEventListener('touchmove',()=>{
+			console.log('你正在移动手指');
+		})
+		demo.addEventListener('touchend',()=>{
+			console.log('你触摸结束了');
+		})
+		demo.addEventListener('touchcancel',()=>{
+			console.log('触摸被打断了');
+		})
+		demo2.addEventListener('click',()=>{
+			console.log('触发了click');
+		})
+		// setTimeout(()=>{
+		// 	alert(1)
+		// },3000)
+	</script>
 </body>
 </html>
