@@ -4,8 +4,51 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>移动端事件对象</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 100%;
+			height: 300px;
+			background-color: skyblue;
+			font-size: 15px;
+		}
+	</style>
 </head>
 <body>
-
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		const demo = document.getElementById('demo')
+		/* demo.addEventListener('touchstart',(event)=>{
+			const {changedTouches,targetTouches,touches} = event
+			demo.innerHTML = '蓝色盒子上同时按下的触点数为：'+changedTouches.length+ '</br>'
+			demo.innerHTML += '蓝色盒子上的触点数为：'+targetTouches.length + '</br>'
+			demo.innerHTML += '当前屏幕上的触点数为：'+touches.length
+		}) */
+		/* demo.addEventListener('touchmove',(event)=>{
+			const {changedTouches,targetTouches,touches} = event
+			event.preventDefault()
+			demo.style.backgroundColor = 'orange'
+			demo.innerHTML = '蓝色盒子上同时移动的触点数为：'+changedTouches.length+ '</br>'
+			demo.innerHTML += '蓝色盒子上的触点数为：'+targetTouches.length + '</br>'
+			demo.innerHTML += '当前屏幕上的触点数为：'+touches.length
+		}) */
+		/* demo.addEventListener('touchend',(event)=>{
+			const {changedTouches,targetTouches,touches} = event
+			event.preventDefault()
+			demo.style.backgroundColor = 'pink'
+			demo.innerHTML = '蓝色盒子上同时抬起的触点数为：'+changedTouches.length+ '</br>'
+			demo.innerHTML += '抬起触点后，蓝色盒子上剩余的触点数为：'+targetTouches.length + '</br>'
+			demo.innerHTML += '抬起触点后，当前屏幕上剩余的触点数为：'+touches.length
+		}) */
+		demo.addEventListener('touchstart',(event)=>{
+			const {targetTouches} = event
+			console.log(targetTouches[0]);
+			demo.innerHTML = '手指肚和屏幕当前接触的椭圆半径1为：'+targetTouches[0].radiusX+'</br>'
+			demo.innerHTML += '手指肚和屏幕当前接触的椭圆半径2为：'+targetTouches[0].radiusY
+		})
+	</script>
 </body>
 </html>
