@@ -4,8 +4,52 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#top{
+			width: 6.46rem;
+			height: 2.90rem;
+			margin-top: 1.47rem;
+			margin-left: 0.5rem;
+			margin-right: 0.54rem;
+			background-color: #76D1A7;
+		}
+		#bottom{
+			display: flex;
+			margin-top: 0.43rem;
+		}
+		#left{
+			width: 1.26rem;
+			height: 4.07rem;
+			margin-left: 0.5rem;
+			margin-right: 0.44rem;
+			background-color: #C464A5;
+		}
+		#right{
+			width: 4.76rem;
+			height: 6.50rem;
+			background-color: #697CC3;
+			margin-right: 0.54rem;
+		}
+	</style>
 </head>
 <body>
+		<div id="top"></div>
+		<div id="bottom">
+			<div id="left"></div>
+			<div id="right"></div>
+		</div>
+	</br>
+	<script type="text/javascript" >
+		function adapter(){
+			document.documentElement.style.fontSize = ((document.documentElement.clientWidth * 100) / 750) + 'px'
+		}
+		adapter()
+		window.onresize = adapter
+	</script>
 	
 </body>
 </html>
