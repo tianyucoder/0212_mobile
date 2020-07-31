@@ -1,81 +1,73 @@
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
+body {
+  width: 100%;
+  height: 100%;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-
-ul {
-  list-style: none;
+#app #content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 1.30666667rem;
+  background-color: skyblue;
 }
-
-button,
-input,
-select,
-textarea {
-  margin: 0;
+#app #content .content_item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
-
-html {
-  box-sizing: border-box;
+#app #content .content_item.active {
+  display: block;
 }
-
-*, *::before, *::after {
-  box-sizing: inherit;
+#app #footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.30666667rem;
+  background-color: white;
 }
-
-img,
-video {
-  height: auto;
-  max-width: 100%;
+#app #footer .footer_item {
+  font-size: 0.32rem;
+  color: #999999;
 }
-
-iframe {
-  border: 0;
+#app #footer .footer_item .icon {
+  width: 0.66666667rem;
+  height: 0.66666667rem;
+  background-size: 100%;
 }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+#app #footer .footer_item .footer_text.active {
+  color: #FF5200;
 }
-
-td,
-th {
-  padding: 0;
+#app #footer .footer_item:nth-child(1) .icon {
+  background-image: url('../imgs/tab_home_normal.png');
 }
-
-td:not([align]),
-th:not([align]) {
-  text-align: left;
+#app #footer .footer_item:nth-child(1) .icon.active {
+  background-image: url('../imgs/tab_home_selected.png');
+}
+#app #footer .footer_item:nth-child(2) .icon {
+  background-image: url('../imgs/tab_store_normal.png');
+}
+#app #footer .footer_item:nth-child(2) .icon.active {
+  background-image: url('../imgs/tab_store_selected.png');
+}
+#app #footer .footer_item:nth-child(3) .icon {
+  background-image: url('../imgs/tab_activity_normal.png');
+}
+#app #footer .footer_item:nth-child(3) .icon.active {
+  background-image: url('../imgs/tab_activity_selected.png');
+}
+#app #footer .footer_item:nth-child(4) .icon {
+  background-image: url('../imgs/tab_mine_normal.png');
+}
+#app #footer .footer_item:nth-child(4) .icon.active {
+  background-image: url('../imgs/tab_mine_selected.png');
 }
